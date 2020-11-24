@@ -6,7 +6,7 @@ Vendedor::Vendedor()
     cantVentas = 0;
 }
 
-Vendedor::Vendedor(int s, int c)
+Vendedor::Vendedor(int s, int c) ///Habría que crear punt a obj Supervisor o se hace en las clases derivadas?
 {
     sueldoBase = s;
     cantVentas = c;
@@ -18,22 +18,22 @@ Vendedor::Vendedor(const Vendedor &v)
     cantVentas = v.cantVentas;
 }
 
-int Vendedor::getsueldoBase()
+int Vendedor::getSueldoBase()
 {
     return sueldoBase;
 }
 
-int Vendedor::getcantVentas()
+int Vendedor::getCantVentas()
 {
     return cantVentas;
 }
 
-int Vendedor::setsueldoBase(int s)
+void Vendedor :: setSueldoBase(int s)
 {
     sueldoBase = s;
 }
 
-int Vendedor::setcantVentas(int c)
+void Vendedor :: setCantVentas(int c)
 {
     cantVentas = c;
 }

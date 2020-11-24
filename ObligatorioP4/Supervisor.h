@@ -1,26 +1,30 @@
 #ifndef SUPERVISOR_H_INCLUDED
 #define SUPERVISOR_H_INCLUDED
+#include "Persona.h"
 
-class Supervisor
+class Supervisor : public Persona
 {
 private:
-    string barrio;
+    String barrio;
     int cantManzanas;
 public:
     //Constructor por defecto
     Supervisor();
     //Constructor común
-    Supervisor(string b, int c);
+    Supervisor(String, int); ///Falta pasarle parametros de Persona
     //Constructor de copia
     Supervisor(const Supervisor &);
     //Selectora de barrio
-    string getbarrio();
+    String getbarrio();
     //Selectora de cantManzanas
     int getcantManzanas();
     //Modificador de barrio
-    void setbarrio(string b);
+    void setbarrio(String);
     //Modificador de cantManzanas
-    void setcantManzanas(int c);
+    void setcantManzanas(int);
+
+    String tipoObjeto ();
+
 };
 
 #endif // SUPERVISOR_H_INCLUDED

@@ -86,31 +86,31 @@ int Fecha :: getAnio ()
     return aa;
 }
 
-boolean Fecha :: operator< (Fecha f)
+bool Fecha :: operator< (Fecha f)
 {
-    boolean es = FALSE;
+    bool es = false;
     if (aa < f.aa)
-        es = TRUE;
+        es = true;
     else
         if (aa > f.aa)
-            es = FALSE;
+            es = false;
         else
             if (mm < f.mm)
-                es = TRUE;
+                es = true;
             else
                 if (mm > f.mm)
-                    es = FALSE;
+                    es = false;
                 else
                     if (dd < f.dd)
-                        es = TRUE;
+                        es = true;
                     else
-                        es = FALSE;
+                        es = false;
     return es;
 }
 
-boolean Fecha :: operator== (Fecha f)
+bool Fecha :: operator== (Fecha f)
 {
-    return (boolean) (aa==f.aa && mm==f.mm && dd==f.dd);
+    return (aa==f.aa && mm==f.mm && dd==f.dd);
 }
 
 Fecha Fecha :: operator+ (int d)
@@ -137,7 +137,7 @@ Fecha Fecha :: operator++(int)
 
 int Fecha :: operator- (Fecha f)
 {
-    fecha aux;
+    Fecha aux;
     int signo = 1;
     int cont = 0;
     if (*this < f)
@@ -152,20 +152,20 @@ int Fecha :: operator- (Fecha f)
     return (signo * cont);
 }
 
-boolean Fecha :: esValida ()
+bool Fecha :: esValida ()
 {
-    boolean es = TRUE;
+    bool es = true;
     if (aa < 1900 || aa > 2099)
-        es = FALSE;
+        es = false;
     else
     {
         switch (mm)
         {
         case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-            es = (dd < 1 || dd > 31)
+            es = (dd < 1 || dd > 31);
             break;
         case 4: case 6: case 9: case 11:
-            es = (dd < 1 || dd > 30)
+            es = (dd < 1 || dd > 30);
             break;
         case 2:
             if ((aa % 4 == 0) && (aa % 100 != 0) || (aa % 400 == 0))

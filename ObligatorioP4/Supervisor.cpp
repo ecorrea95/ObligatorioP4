@@ -1,12 +1,12 @@
 #include "Supervisor.h"
 
-Supervisor::Supervisor()
+Supervisor :: Supervisor()
 {
-    barrio = '';
+    barrio = " ";
     cantManzanas = 0;
 }
 
-Supervisor::Supervisor(string b, int c)
+Supervisor::Supervisor(String b, int c)
 {
     barrio = b;
     cantManzanas = c;
@@ -18,7 +18,7 @@ Supervisor::Supervisor(const Supervisor &s)
     cantManzanas = s.cantManzanas;
 }
 
-string Supervisor::getbarrio()
+String Supervisor::getbarrio()
 {
     return barrio;
 }
@@ -28,7 +28,7 @@ int Supervisor::getcantManzanas()
     return cantManzanas;
 }
 
-void Supervisor::setbarrio(string b)
+void Supervisor::setbarrio(String b)
 {
     barrio = b;
 }

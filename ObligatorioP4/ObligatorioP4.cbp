@@ -34,10 +34,20 @@
 		</Compiler>
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Fijo.cpp" />
+		<Unit filename="Fijo.h" />
+		<Unit filename="Iterador.cpp" />
+		<Unit filename="Iterador.h" />
+		<Unit filename="Persona.cpp" />
+		<Unit filename="Persona.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
 		<Unit filename="Supervisor.cpp" />
 		<Unit filename="Supervisor.h" />
 		<Unit filename="Vendedor.cpp" />
 		<Unit filename="Vendedor.h" />
+		<Unit filename="Zafral.cpp" />
+		<Unit filename="Zafral.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

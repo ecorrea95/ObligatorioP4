@@ -19,9 +19,9 @@ public:
     int getMes ();
     int getAnio ();
     //Compara por menor 2 fechas
-    boolean operator< (Fecha);
+    bool operator< (Fecha);
     //Compara por igualdad 2 fechas
-    boolean operator== (Fecha);
+    bool operator== (Fecha);
     //Devuelve la fecha incrementada en n dias
     Fecha operator+ (int);
     //Operador prefijo de incremento
@@ -31,7 +31,7 @@ public:
     //Devuelve la diferencia en días entre 2 fechas
     int operator- (Fecha);
     //Validacion de la fecha
-    boolean esValida ();
+    bool esValida ();
 };
 
 #endif // FECHA_H_INCLUDED

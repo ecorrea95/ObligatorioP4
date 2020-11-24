@@ -9,12 +9,12 @@ class Persona
         String nombre;
     public:
         Persona();
-        Persona(int, String);
-        Persona(const Persona &);
-        ~Persona();
-        Persona operator= (const Persona &);
+        Persona(int, String);   ///Es necesario si es abstracta?
+        virtual ~Persona();
         int getCedula();
         String getNombre();
+        virtual String tipoObjeto() = 0;
+
 };
 
 

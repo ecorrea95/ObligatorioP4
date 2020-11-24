@@ -1,8 +1,8 @@
 #include "Persona.h"
 
-Persona :: Persona() : nombre("Juan")
+Persona :: Persona() : nombre(" ")
 {
-    cedula = 1112231;
+    cedula = 0;
 }
 Persona :: Persona(int ced, String nom): nombre(nom)
 {
