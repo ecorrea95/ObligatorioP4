@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="DiccionarioSupervisores.cpp" />
+		<Unit filename="DiccionarioSupervisores.h" />
 		<Unit filename="DiccionarioVendedores.cpp" />
 		<Unit filename="DiccionarioVendedores.h" />
 		<Unit filename="Fecha.cpp" />
