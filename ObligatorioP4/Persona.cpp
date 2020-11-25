@@ -4,26 +4,14 @@ Persona :: Persona() : nombre(" ")
 {
     cedula = 0;
 }
-Persona :: Persona(int ced, String nom): nombre(nom)
+Persona :: Persona(long int ced, String nom): nombre(nom)
 {
     cedula = ced;
 }
-Persona :: Persona(const Persona &otro) : nombre(otro.nombre)
-{
-    cedula = otro.cedula;
-}
+
 Persona :: ~Persona()
 {
 
-}
-Persona Persona :: operator= (const Persona &otro)
-{
-    if(this != &otro)
-    {
-        cedula = otro.cedula;
-        nombre = otro.nombre;
-    }
-    return(*this);
 }
 int Persona :: getCedula()
 {

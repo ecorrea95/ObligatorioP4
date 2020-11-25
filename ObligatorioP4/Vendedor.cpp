@@ -6,16 +6,16 @@ Vendedor::Vendedor()
     cantVentas = 0;
 }
 
-Vendedor::Vendedor(int s, int c) ///Habría que crear punt a obj Supervisor o se hace en las clases derivadas?
+Vendedor::Vendedor(long int p, String ps, int s, int c) : Persona(p, ps)
 {
+    ///Habría que crear punt a obj Supervisor o se hace en las clases derivadas?
     sueldoBase = s;
     cantVentas = c;
 }
 
-Vendedor::Vendedor(const Vendedor &v)
+Vendedor :: ~Vendedor()
 {
-    sueldoBase = v.sueldoBase;
-    cantVentas = v.cantVentas;
+    Super = NULL; ///No se si usamos así pero para poder probar
 }
 
 int Vendedor::getSueldoBase()

@@ -8,25 +8,24 @@ class Vendedor : public Persona
 private:
     int sueldoBase;
     int cantVentas;
-    Supervisor * Super;
+    Supervisor * Super; ///Ver como borrarlo
 public:
     //Constructor por defecto
     Vendedor();
     //Constructor común
-    Vendedor(int, int);   ///Es necesario si es abstracta?
-    //Constructor de copia ///Falta pasarle parametros de Persona
-
+    Vendedor(long int, String, int, int);
+    //Constructor de copia
     int getSueldoBase();
     //Selectora de cantVentas
     int getCantVentas();
     //Modificador de sueldoBase
-    void setSueldoBase(int);       ///Debería llevar virtual, debería existir?
+    void setSueldoBase(int);
     //Modificador de cantVentas
     void setCantVentas(int);
 
-    virtual String tipoObjeto () = 0; ///Es abstracta?
+    virtual String tipoObjeto () = 0;
 
-    ~Vendedor(); ///debería llevar el = 0, si es que existe?
+    ~Vendedor();
 
 };
 

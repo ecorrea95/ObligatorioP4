@@ -8,13 +8,9 @@ private:
     String barrio;
     int cantManzanas;
 public:
-    //Constructor por defecto
-    Supervisor();
     //Constructor común
-    Supervisor(String, int); ///Falta pasarle parametros de Persona
+    Supervisor(long int, String, String, int);
     //Constructor de copia
-    Supervisor(const Supervisor &);
-    //Selectora de barrio
     String getbarrio();
     //Selectora de cantManzanas
     int getcantManzanas();

@@ -1,21 +1,9 @@
 #include "Supervisor.h"
 
-Supervisor :: Supervisor()
-{
-    barrio = " ";
-    cantManzanas = 0;
-}
-
-Supervisor::Supervisor(String b, int c)
+Supervisor::Supervisor(long int p, String ps, String b, int c) : Persona(p, ps)
 {
     barrio = b;
     cantManzanas = c;
-}
-
-Supervisor::Supervisor(const Supervisor &s)
-{
-    barrio = s.barrio;
-    cantManzanas = s.cantManzanas;
 }
 
 String Supervisor::getbarrio()
@@ -36,4 +24,9 @@ void Supervisor::setbarrio(String b)
 void Supervisor::setcantManzanas(int c)
 {
     cantManzanas = c;
+}
+String Supervisor :: tipoObjeto ()
+{
+    String tipo = "Supervisor";
+    return (String) tipo;
 }

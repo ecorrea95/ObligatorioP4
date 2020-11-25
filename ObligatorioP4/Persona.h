@@ -5,11 +5,11 @@
 class Persona
 {
     private:
-        int cedula;
+        long int cedula;
         String nombre;
     public:
         Persona();
-        Persona(int, String);   ///Es necesario si es abstracta?
+        Persona(long int, String);   ///Es necesario si es abstracta?
         virtual ~Persona();
         int getCedula();
         String getNombre();
