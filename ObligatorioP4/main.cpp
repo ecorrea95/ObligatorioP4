@@ -1,5 +1,7 @@
 #include <iostream>
 #include "DiccionarioVendedores.h"
+#include "DiccionarioSupervisores.h"
+
 using namespace std;
 
 int main()
@@ -29,6 +31,13 @@ int main()
     cout << "Cantidad de ventas luego: " << v-> getCantVentas() << endl;
     cout << "Hay " << diccioVendedores.contarcuantoszafrales() << " Zafrales" << endl;
 
+    Supervisor * Sup1 = new Supervisor(486315,"Emiliano","Montevideo",5);
+    Supervisor * Sup2 = new Supervisor(123456,"Juan","Canelones",2);
+    Supervisor * Sup3 = new Supervisor(978645,"Santiago","Rivera",1);
+    Supervisores diccioSupervisores;
+    diccioSupervisores.insert(Sup1);
+    diccioSupervisores.insert(Sup2);
+    diccioSupervisores.insert(Sup3);
 
 
 }
