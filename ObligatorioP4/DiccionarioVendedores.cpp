@@ -1,7 +1,7 @@
 #include "DiccionarioVendedores.h"
 
 ///Precondicion, existe ced
-void Vendedores :: registrarcantVentasRecu(NodoA * a, long int ced, int cantVent)
+void Vendedores :: registrarcantVentasRecu(NodoA * &a, long int ced, int cantVent)
 {
     if(a->info->getCedula() == ced)
         a->info->setCantVentas(cantVent);
@@ -15,13 +15,14 @@ int Vendedores :: contarZafralesRecu(NodoA * a, int cuenta)
     if(a != NULL)
     {
         if(a -> info -> tipoObjeto() == "Zafral")
-            cuenta += 1;
+            return 1 + contarZafralesRecu(a -> hizq, cuenta) + contarZafralesRecu(a -> hder, cuenta);
         else
-            cuenta = contarZafralesRecu(a -> hizq, cuenta) + contarZafralesRecu(a -> hder, cuenta);
-        return cuenta;
+            return 0 + contarZafralesRecu(a -> hizq, cuenta) + contarZafralesRecu(a -> hder, cuenta);
     }
     else
+    {
         return 0;
+    }
 }
 
 int Vendedores :: calcularmontototaldesueldosRecu(NodoA * a)
@@ -46,7 +47,7 @@ bool Vendedores :: MemberRecu (NodoA * a, long int ced)
         return false;
 
 }
-void Vendedores :: insertEnArbol (NodoA * a, Vendedor * vend)
+void Vendedores :: insertEnArbol (NodoA * &a, Vendedor * vend)
 {
     if (a == NULL)
     {
@@ -79,10 +80,14 @@ void Vendedores :: insert (Vendedor * vend)
 
 Vendedores :: Vendedores ()
 {
+
     ABBVendedores = NULL;
 }
 
-//Vendedores :: ~Vendedores ();
+Vendedores :: ~Vendedores ()
+{
+
+}
 
 bool Vendedores :: member (long int ced)
 {
@@ -96,16 +101,11 @@ Vendedor* Vendedores :: find (long int ced)
     return FindVendedorRecu(ABBVendedores, ced);
 }
 
-void Vendedores :: remove (long int ced)
-{
-    int a = 0; ///MUY DIFICIL NO TENGO GANAS
-}
-
 bool Vendedores :: estaVacio ()
 {
     return (ABBVendedores == NULL);
 }
-void Vendedores :: listar(NodoA * a, Iterador &iter)
+void Vendedores :: listar(NodoA * a, Iterador &iter) ///Debería ir como método privado
 {
     if(a != NULL)
     {

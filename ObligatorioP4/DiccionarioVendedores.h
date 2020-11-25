@@ -2,6 +2,8 @@
 #define DICCIONARIOVENDEDORES_H_INCLUDED
 #include "Vendedor.h"
 #include "Iterador.h"
+#include "Zafral.h"
+#include "Fijo.h"
 
 class Vendedores
 {
@@ -12,10 +14,10 @@ class Vendedores
                     NodoA * hder;
                  };
     NodoA * ABBVendedores;
-    void insertEnArbol (NodoA *, Vendedor *);
+    void insertEnArbol (NodoA *&, Vendedor *);
     bool MemberRecu(NodoA *, long int);
     Vendedor* FindVendedorRecu(NodoA *, long int);
-    void registrarcantVentasRecu(NodoA *, long int, int);
+    void registrarcantVentasRecu(NodoA *&, long int, int);
     int calcularmontototaldesueldosRecu(NodoA *);
     int contarZafralesRecu(NodoA *, int cuenta);
 
@@ -32,9 +34,6 @@ class Vendedores
         Vendedor* find (long int);
         // retorna al vendedor cuyo número es num
         // precondición: la estadía es miembro
-        void remove (long int);
-        // elimina del diccionario al vendedor con el código recibido
-        // precondición: el articulo es miembro
         bool estaVacio ();
         // indica si el diccionario está vacío
         void listar(NodoA *, Iterador &);
