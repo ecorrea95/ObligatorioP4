@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1606272500 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
+1606313896 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
 	<iostream>
+	"DiccionarioVendedores.h"
 
 1606250034 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\persona.cpp
 	"Persona.h"
@@ -54,10 +55,12 @@
 	"Vendedor.h"
 	"Fecha.h"
 
-1606270944 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
+1606314741 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
 	"DiccionarioVendedores.h"
 
-1606270181 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.h
+1606313371 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.h
 	"Vendedor.h"
 	"Iterador.h"
+	"Zafral.h"
+	"Fijo.h"
 
