@@ -1,62 +1,81 @@
-/*#include "DiccionarioSupervisores.h"
-
-//Constructor por defecto
-Supervisores :: Supervisores()
+#include "DiccionarioSupervisores.h"
+int Supervisores :: h (long int clave)
 {
-    HashSupervisor = NULL;
+    return(clave % B);
 }
-
-//Destructor
-Supervisores :: ~Supervisores()
+void Supervisores :: listarRecu(Nodo * L, Iterador &iter)
 {
-
-}
-
-//Inserta supervisor en el hash
-//Precondición: el supervisor no pertenece
-void Supervisores :: insert(Supervisor * sup)
-{
-    insertEnHash(Hash, sup);
-}
-
-void Supervisores :: insertEnHash(NodoL * &h, Supervisor * sup)
-{
-    int cedula = Supervisor.getCedula();
-    int cubeta = h(cedula);
-    InsFront(sup, h[cubeta]);
-}
-
-//Indica si el supervisor es miembro
-bool Supervisores :: member(long int ced)
-{
-    return MemberHash(Hash, ced)
-}
-
-bool Supervisores :: MemberHash(Hash h, int ced)
-{
-    boolean existe = false;
-    while (!existe && h != NULL)
+    Nodo * aux = L;
+    while(aux != NULL)
     {
-        if (ced == Supervisor.getCedula(h->Info))
+        iter.Insertar(aux -> info);
+        aux = aux -> sig;
+    }
+}
+void Supervisores :: InsFront (Nodo * &L, Supervisor * Super)
+{
+     Nodo * aux = new Nodo;
+     aux -> info = Super;
+     aux -> sig = L;
+     L = aux;
+}
+Supervisor* Supervisores :: devolverEnLista(Nodo * L, long int ced)
+{
+    Nodo* aux = L;
+    long int cedula = aux ->info->getCedula();
+    while(aux != NULL && cedula != ced)
+    {
+        cedula = aux ->info->getCedula();
+        aux = aux -> sig;
+    }
+    return aux -> info;
+}
+
+bool Supervisores :: buscarEnLista(Nodo * L, long int ced)
+{
+    Nodo * aux = L;
+    bool existe = false;
+    long int cedula;
+    while(aux != NULL && !existe)
+    {
+        cedula = aux ->info->getCedula();
+        if(cedula == ced)
             existe = true;
         else
-            h = h->sig;
+            aux = aux -> sig;
     }
     return existe;
 }
-
-bool Vendedores :: MemberRecu (NodoA * a, long int ced)
+void Supervisores :: CrearLista(Nodo * &L)
 {
-    if(a ->info->getCedula() == ced)
-    {
-        return true;
-    }
-    else if (ced < a->info->getCedula())
-        return MemberRecu(a->hizq, ced);
-    else if (ced > a->info->getCedula())
-        return MemberRecu(a->hder, ced);
-    else
-        return false;
-
+    L = NULL;
 }
-*/
+Supervisores :: Supervisores()
+{
+    int i;
+    for(i=0;i<B;i++)
+        CrearLista(hash[i]);
+}
+bool Supervisores :: Member(long int ced)
+{
+    int cubeta = h(ced);
+    Nodo* L = hash[cubeta];
+    return buscarEnLista(L, ced);
+}
+void Supervisores :: Insert(Supervisor * Super)
+{
+    long int ced = Super->getCedula();
+    int cubeta = h(ced);
+    InsFront(hash[cubeta], Super);
+}
+Supervisor * Supervisores :: Find(long int ced)
+{
+    int cubeta = h(ced);
+    Nodo* L = hash[cubeta];
+    return devolverEnLista(L, ced);
+}
+void Supervisores :: listar(Iterador &iter)
+{
+    for(int i = 0; i < B; i++)
+        listarRecu(hash[i], iter);
+}

@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1606313896 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
+1606344575 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
 	<iostream>
 	"DiccionarioVendedores.h"
+	"DiccionarioSupervisores.h"
 
 1606250034 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\persona.cpp
 	"Persona.h"
@@ -24,7 +25,7 @@
 1606220348 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\iterador.cpp
 	"Iterador.h"
 
-1606068575 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\iterador.h
+1606339432 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\iterador.h
 	"Persona.h"
 
 1606272359 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\supervisor.cpp
@@ -55,75 +56,19 @@
 	"Vendedor.h"
 	"Fecha.h"
 
-1606314741 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
+1606342805 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
 	"DiccionarioVendedores.h"
 
-1606313371 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.h
+1606339837 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.h
 	"Vendedor.h"
 	"Iterador.h"
 	"Zafral.h"
 	"Fijo.h"
 
-1606325113 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
-	"DiccionarioVendedores.h"
+1606343825 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.cpp
+	"DiccionarioSupervisores.h"
 
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.h
-	"Vendedor.h"
-	"Iterador.h"
-	"Zafral.h"
-	"Fijo.h"
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.h
-	"Persona.h"
+1606343845 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.h
 	"Supervisor.h"
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\persona.h
-	"String.h"
-
-1605220433 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\string.h
-	<string.h>
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\supervisor.h
-	"Persona.h"
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\iterador.h
-	"Persona.h"
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.h
-	"Vendedor.h"
-	"Fecha.h"
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fecha.h
-
-1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fijo.h
-	"Vendedor.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fecha.cpp
-	"Fecha.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fijo.cpp
-	"Fijo.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\iterador.cpp
 	"Iterador.h"
-
-1606325187 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\main.cpp
-	<iostream>
-	"DiccionarioVendedores.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\persona.cpp
-	"Persona.h"
-
-1605220433 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\string.cpp
-	"String.h"
-	<iostream>
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\supervisor.cpp
-	"Supervisor.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.cpp
-	"Vendedor.h"
-
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.cpp
-	"Zafral.h"
 

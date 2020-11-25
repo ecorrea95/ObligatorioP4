@@ -10,6 +10,15 @@ void Vendedores :: registrarcantVentasRecu(NodoA * &a, long int ced, int cantVen
     else
         registrarcantVentasRecu(a -> hder, ced, cantVent);
 }
+void Vendedores :: ListarRecu(NodoA * a, Iterador &iter)
+{
+    if(a != NULL)
+    {
+        ListarRecu(a -> hizq, iter);
+        iter.Insertar(a -> info);
+        ListarRecu(a -> hder, iter);
+    }
+}
 int Vendedores :: contarZafralesRecu(NodoA * a, int cuenta)
 {
     if(a != NULL)
@@ -94,8 +103,6 @@ bool Vendedores :: member (long int ced)
     return MemberRecu(ABBVendedores, ced);
 }
 
-void Vendedores :: insert (Vendedor * vend);
-
 Vendedor* Vendedores :: find (long int ced)
 {
     return FindVendedorRecu(ABBVendedores, ced);
@@ -105,14 +112,10 @@ bool Vendedores :: estaVacio ()
 {
     return (ABBVendedores == NULL);
 }
-void Vendedores :: listar(NodoA * a, Iterador &iter) ///Debería ir como método privado
+void Vendedores :: listar(Iterador &iter) ///Debería ir como método privado
 {
-    if(a != NULL)
-    {
-        listar(a -> hizq, iter);
-        iter.Insertar(a -> info);
-        listar(a -> hder, iter);
-    }
+    NodoA * a = ABBVendedores;
+    ListarRecu(a, iter);
 }
 void Vendedores :: registrarcantventas (long int ced, int cantVent)
 {

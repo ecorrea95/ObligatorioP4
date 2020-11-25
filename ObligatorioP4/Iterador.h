@@ -17,12 +17,11 @@ class Iterador
         void Insertar (Persona *);
         //Inserta una persona en el iterador;
         bool HayMasPersonas ();
-        //Determina si quedan duenios por visitar en el iterador;
+        //Determina si quedan dueños por visitar en el iterador;
         Persona * ProximaPersona();
         //Retorna la proxima persona por visitar en el iterador;
         ~Iterador();
         //Destructor;
-
 };
 
 

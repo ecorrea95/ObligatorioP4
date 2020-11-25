@@ -14,12 +14,14 @@ class Vendedores
                     NodoA * hder;
                  };
     NodoA * ABBVendedores;
+
     void insertEnArbol (NodoA *&, Vendedor *);
     bool MemberRecu(NodoA *, long int);
     Vendedor* FindVendedorRecu(NodoA *, long int);
     void registrarcantVentasRecu(NodoA *&, long int, int);
     int calcularmontototaldesueldosRecu(NodoA *);
     int contarZafralesRecu(NodoA *, int cuenta);
+    void ListarRecu(NodoA *, Iterador &);
 
     public:
         Vendedores ();
@@ -36,7 +38,7 @@ class Vendedores
         // precondición: la estadía es miembro
         bool estaVacio ();
         // indica si el diccionario está vacío
-        void listar(NodoA *, Iterador &);
+        void listar(Iterador &);
         void registrarcantventas (long int, int);
         int calcularmontototaldesueldos();
         int contarcuantoszafrales();

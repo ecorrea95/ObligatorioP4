@@ -1,7 +1,6 @@
 #include <iostream>
 #include "DiccionarioVendedores.h"
 #include "DiccionarioSupervisores.h"
-
 using namespace std;
 
 int main()
@@ -9,35 +8,72 @@ int main()
     Fecha Colon(12,5,1494);
     Fecha Guerra(5,9,1939);
     Vendedor * Vend1 = new Zafral(25000, 15, 5088929, "Joaco", Colon, 3000);
-    Vendedor * Vend2 = new Zafral(17800, 3, 5458288, "Juan", Guerra, 4000);
-    Vendedor * Vend3 = new Fijo(1500, 3, 1234345, "Chorizo", 1400);
-    Vendedores diccioVendedores;
-    diccioVendedores.insert(Vend1);
-    diccioVendedores.insert(Vend2);
-    diccioVendedores.insert(Vend3);
-    if(diccioVendedores.estaVacio())
-        cout << "true" <<endl;
+    Vendedor * Vend2 = new Zafral(178000, 3, 5458288, "Soledad", Guerra, 4000);
+    Vendedor * Vend3 = new Fijo(60000, 34, 5424324, "Xime", 3000);
+    Vendedor * Vend4 = new Fijo(15000, 3, 1234345, "Emiliano", 1400);
+    Vendedores diccio;
+    diccio.insert(Vend1);
+    diccio.insert(Vend2);
+    diccio.insert(Vend3);
+    diccio.insert(Vend4);
+    if(diccio.estaVacio())
+        cout << "Esta vacio" <<endl;
     else
-        cout << "false" << endl;
-    if(diccioVendedores.member(5088929))
-        cout << "true" <<endl;
+        cout << "No esta vacio" << endl;
+    if(diccio.member(5088929))
+        cout << "Existe el vendedor" <<endl;
     else
-        cout << "false" << endl;
-    Vendedor * v = diccioVendedores.find(5088929);
+        cout << "No existe vendedor" << endl;
+    Vendedor * v = diccio.find(5088929);
     cout << v-> getCantVentas() << endl;
     cout << v-> getCedula() << endl;
-    cout << diccioVendedores.calcularmontototaldesueldos() << endl;
-    diccioVendedores.registrarcantventas(5088929, 24);
+    cout << "El monto total de sueldos es: "<< diccio.calcularmontototaldesueldos() << endl;
+    diccio.registrarcantventas(5088929, 24);
     cout << "Cantidad de ventas luego: " << v-> getCantVentas() << endl;
-    cout << "Hay " << diccioVendedores.contarcuantoszafrales() << " Zafrales" << endl;
-
-    Supervisor * Sup1 = new Supervisor(486315,"Emiliano","Montevideo",5);
-    Supervisor * Sup2 = new Supervisor(123456,"Juan","Canelones",2);
-    Supervisor * Sup3 = new Supervisor(978645,"Santiago","Rivera",1);
-    Supervisores diccioSupervisores;
-    diccioSupervisores.insert(Sup1);
-    diccioSupervisores.insert(Sup2);
-    diccioSupervisores.insert(Sup3);
-
+    cout << "Hay " << diccio.contarcuantoszafrales() << " Zafrales" << endl;
+    Iterador iter;
+    diccio.listar(iter);
+    while(iter.HayMasPersonas())
+    {
+        Persona * per = iter.ProximaPersona();
+        cout << "La cedula es: " << per->getCedula() << " y su nombre es: ";
+        String ss = per->getNombre();
+        ss.print();
+        cout << endl << "Su tipo es : ";
+        ss = per->tipoObjeto();
+        ss.print();
+        cout << endl;
+    }
+    Supervisores Super;
+    Supervisor * Sup1 = new Supervisor(1342424, "Pedro", "Cordon", 3);
+    Supervisor * Sup2 = new Supervisor(6646464, "Agus", "Centro", 5);
+    Supervisor * Sup3 = new Supervisor(1010101, "Marcos", "Cerro", 1);
+    Supervisor * Sup4 = new Supervisor(4949339, "Santiago", "Carrasco", 5);
+    Super.Insert(Sup1);
+    Super.Insert(Sup2);
+    Super.Insert(Sup3);
+    Super.Insert(Sup4);
+    if(Super.Member(1010101))
+        cout<< "----------------------------------" << endl <<"Existe Supervisor" << endl;
+    else
+        cout << "No existe" << endl;
+    Supervisor * SupP = Super.Find(1010101);
+    cout << "El nombre es: " ;
+    String n = SupP->getNombre();
+    n.print();
+    cout << " su cedula es: " << SupP->getCedula() << endl;
+    Iterador iter2;
+    Super.listar(iter2);
+    while(iter2.HayMasPersonas())
+    {
+        Persona * per = iter2.ProximaPersona();
+        cout << "La cedula es: " << per->getCedula() << " y su nombre es: ";
+        String ss = per->getNombre();
+        ss.print();
+        cout << endl << "Su tipo es : ";
+        ss = per->tipoObjeto();
+        ss.print();
+        cout << endl;
+    }
 
 }
