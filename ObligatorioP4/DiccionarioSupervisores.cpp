@@ -56,6 +56,11 @@ Supervisores :: Supervisores()
     for(i=0;i<B;i++)
         CrearLista(hash[i]);
 }
+Supervisores :: ~Supervisores ()
+{
+    ///recorrer cada cubeta
+    ///Borrar lista
+}
 bool Supervisores :: Member(long int ced)
 {
     int cubeta = h(ced);

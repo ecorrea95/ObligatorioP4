@@ -10,7 +10,7 @@ private:
 public:
     //Constructor común
     Supervisor(long int, String, String, int);
-    //Constructor de copia
+    ~Supervisor();
     String getbarrio();
     //Selectora de cantManzanas
     int getcantManzanas();

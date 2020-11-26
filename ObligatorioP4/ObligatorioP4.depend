@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1606344575 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
+1606397898 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\main.cpp
 	<iostream>
 	"DiccionarioVendedores.h"
 	"DiccionarioSupervisores.h"
@@ -28,35 +28,35 @@
 1606339432 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\iterador.h
 	"Persona.h"
 
-1606272359 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\supervisor.cpp
+1606393780 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\supervisor.cpp
 	"Supervisor.h"
 
-1606271679 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\supervisor.h
+1606393780 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\supervisor.h
 	"Persona.h"
 
 1606248266 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\vendedores.cpp
 
-1606272489 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\fijo.cpp
+1606397798 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\fijo.cpp
 	"Fijo.h"
 
-1606272489 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\fijo.h
+1606397231 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\fijo.h
 	"Vendedor.h"
 
-1606250010 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\vendedor.h
+1606397231 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\vendedor.h
 	"Persona.h"
 	"Supervisor.h"
 
-1606271864 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\vendedor.cpp
+1606397231 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\vendedor.cpp
 	"Vendedor.h"
 
-1606272489 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\zafral.cpp
+1606397798 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\zafral.cpp
 	"Zafral.h"
 
-1606272489 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\zafral.h
+1606397798 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\zafral.h
 	"Vendedor.h"
 	"Fecha.h"
 
-1606342805 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
+1606393544 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
 	"DiccionarioVendedores.h"
 
 1606339837 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariovendedores.h
@@ -65,10 +65,10 @@
 	"Zafral.h"
 	"Fijo.h"
 
-1606343825 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.cpp
+1606393179 source:c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.cpp
 	"DiccionarioSupervisores.h"
 
-1606343845 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.h
+1606393181 c:\users\joaquín\onedrive\documentos\github\obligatoriop4\obligatoriop4\diccionariosupervisores.h
 	"Supervisor.h"
 	"Iterador.h"
 

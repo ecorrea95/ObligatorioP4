@@ -12,6 +12,22 @@ void Fijo :: setPlus(int p)
 {
     plus = p;
 }
+int Fijo :: calcularSueldo()
+{
+    int sueldo = Vendedor :: getSueldoBase();
+    if(getCantVentas() < 10)
+    {
+        return sueldo;
+    }
+    else if (getCantVentas() < 20)
+    {
+        return sueldo + plus;
+    }
+    else
+    {
+        return sueldo + plus * 2;
+    }
+}
 String Fijo :: tipoObjeto()
 {
     String tipo = "Fijo";

@@ -5,7 +5,10 @@ Supervisor::Supervisor(long int p, String ps, String b, int c) : Persona(p, ps)
     barrio = b;
     cantManzanas = c;
 }
+Supervisor :: ~Supervisor()
+{
 
+}
 String Supervisor::getbarrio()
 {
     return barrio;

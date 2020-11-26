@@ -13,6 +13,7 @@ public:
     int getComision();
     void setFechaVencimiento(Fecha);
     void setComision(int);
+    int calcularSueldo();
     String tipoObjeto();
 };
 

@@ -10,8 +10,6 @@ private:
     int cantVentas;
     Supervisor * Super; ///Ver como borrarlo
 public:
-    //Constructor por defecto
-    Vendedor();
     //Constructor común
     Vendedor(long int, String, int, int);
     //Constructor de copia
@@ -19,6 +17,8 @@ public:
     //Selectora de cantVentas
     int getCantVentas();
     //Modificador de sueldoBase
+    virtual int calcularSueldo() = 0;
+
     void setSueldoBase(int);
     //Modificador de cantVentas
     void setCantVentas(int);

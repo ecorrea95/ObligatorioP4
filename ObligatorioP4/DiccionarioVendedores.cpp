@@ -37,7 +37,7 @@ int Vendedores :: contarZafralesRecu(NodoA * a, int cuenta)
 int Vendedores :: calcularmontototaldesueldosRecu(NodoA * a)
 {
     if(a != NULL)
-        return (a -> info -> getSueldoBase() + calcularmontototaldesueldosRecu(a -> hizq) + calcularmontototaldesueldosRecu(a -> hder));
+        return (a -> info -> calcularSueldo() + calcularmontototaldesueldosRecu(a -> hizq) + calcularmontototaldesueldosRecu(a -> hder));
     else
         return 0;
 }

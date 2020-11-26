@@ -20,6 +20,20 @@ void Zafral :: setComision(int com)
 {
     comisionVenta = com;
 }
+int Zafral :: calcularSueldo()
+{
+    int sueldo = Vendedor :: getSueldoBase();
+    if(getCantVentas() != 0)
+    {
+        int comi = comisionVenta * getCantVentas();
+        return sueldo + comi;
+    }
+    else
+    {
+        return sueldo;
+    }
+
+}
 String Zafral :: tipoObjeto()
 {
     String tipo = "Zafral";

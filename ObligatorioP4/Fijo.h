@@ -9,6 +9,7 @@ class Fijo : public Vendedor{
         Fijo(int, int, long int, String nom /*Supervisor*/, int);
         int getPlus();
         void setPlus(int);
+        int calcularSueldo();
         String tipoObjeto();
 
 };

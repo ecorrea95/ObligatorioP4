@@ -20,6 +20,7 @@ class Supervisores
 
     public:
         Supervisores();
+        ~Supervisores();
         bool Member(long int);
         void Insert(Supervisor *);
         Supervisor* Find(long int);
