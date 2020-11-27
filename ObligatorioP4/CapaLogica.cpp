@@ -25,15 +25,40 @@ void CapaLogica :: registrarVendedor(Vendedor * vend, TipoError &error)
         vendedores.insert(vend);
 }
 
-Iterador listarSupervisores(Iterador &iter)
+Iterador CapaLogica :: listarSupervisores(Iterador &iter)
 {
     Supervisores.listar(iter);
 }
 
-Iterador listarVendedores(Iterador &iter)
+Iterador CapaLogica :: listarVendedores(Iterador &iter)
 {
     Vendedores.listar(iter);
 }
 
+void CapaLogica :: listarVendedor(long int ced, TipoError &error)
+{
+    error = SIN_ERROR;
+    ///IMPLEMENTAR UN LISTAR DE VENDEDOR?
+}
 
+void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
+{
+    error = SIN_ERROR;
+    if(!vendedores.member(ced))
+        error = VENDEDOR_NO_EXISTE;
+    else
+    {
+        Vendedor vend = vendedores.find(ced);
+        vend.setCantVentas(ventas);
+    }
+}
 
+int CapaLogica :: sueldoTotal(Vendedor *vend)
+{
+
+}
+
+int CapaLogica :: cantZafralesHasta(Fecha f)
+{
+
+}

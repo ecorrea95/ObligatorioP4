@@ -4,7 +4,7 @@
 #include "DiccionarioVendedores.h"
 #include "TipoError.h"
 
-class CapaLogica
+class CapaLogica : public Vendedores, public Supervisores
 {
 private:
     Supervisores supervisores;
@@ -26,7 +26,7 @@ public:
     //Lista un vendedor dado
     void listarVendedor(long int,TipoError &);
     //Registrar la cantidad de ventas realizadas por un vendedor en una semana
-    void ventasSemanales(int, int, TipoError &);
+    void ventasSemanales(int, long int, TipoError &);
     //Calcular el sueldo dependiendo del tipo de vendedor
     int sueldoTotal(Vendedor *);
     //Devuelve cuantos zafrales se encuentran registrados antes de X fecha
