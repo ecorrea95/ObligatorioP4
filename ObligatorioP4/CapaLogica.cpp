@@ -27,12 +27,12 @@ void CapaLogica :: registrarVendedor(Vendedor * vend, TipoError &error)
 
 Iterador CapaLogica :: listarSupervisores(Iterador &iter)
 {
-    Supervisores.listar(iter);
+    supervisores.listar(iter);
 }
 
 Iterador CapaLogica :: listarVendedores(Iterador &iter)
 {
-    Vendedores.listar(iter);
+    vendedores.listar(iter);
 }
 
 void CapaLogica :: listarVendedor(long int ced, TipoError &error)
@@ -55,7 +55,10 @@ void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
 
 int CapaLogica :: sueldoTotal(Vendedor *vend)
 {
-
+    if(vend.tipoObjeto() == "Fijo")
+        Fijo.calcularSueldo();
+    else
+        Zafral.calcularSueldo();
 }
 
 int CapaLogica :: cantZafralesHasta(Fecha f)
