@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CapaLogica.h" />
 		<Unit filename="DiccionarioSupervisores.cpp" />
 		<Unit filename="DiccionarioSupervisores.h" />
 		<Unit filename="DiccionarioVendedores.cpp" />
@@ -48,6 +49,7 @@
 		<Unit filename="String.h" />
 		<Unit filename="Supervisor.cpp" />
 		<Unit filename="Supervisor.h" />
+		<Unit filename="TipoError.h" />
 		<Unit filename="Vendedor.cpp" />
 		<Unit filename="Vendedor.h" />
 		<Unit filename="Zafral.cpp" />
