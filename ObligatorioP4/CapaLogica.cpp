@@ -48,8 +48,8 @@ void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
         error = VENDEDOR_NO_EXISTE;
     else
     {
-        Vendedor vend = vendedores.find(ced);
-        vend.setCantVentas(ventas);
+        Vendedores vend = vendedores.find(ced);
+        vend.registrarcantventas(ced, ventas);
     }
 }
 
@@ -65,3 +65,4 @@ int CapaLogica :: cantZafralesHasta(Fecha f)
 {
 
 }
+

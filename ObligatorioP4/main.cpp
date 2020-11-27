@@ -1,6 +1,7 @@
 #include <iostream>
 #include "DiccionarioVendedores.h"
 #include "DiccionarioSupervisores.h"
+#include "CapaLogica.h"
 using namespace std;
 
 int main()
@@ -75,5 +76,8 @@ int main()
         ss.print();
         cout << endl;
     }
+
+
+
 
 }
