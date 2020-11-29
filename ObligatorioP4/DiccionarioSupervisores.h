@@ -17,6 +17,7 @@ class Supervisores
         void InsFront (Nodo *&, Supervisor *);
         Supervisor* devolverEnLista(Nodo *, long int);
         void listarRecu(Nodo *, Iterador &);
+        void BorrarListaRecu(Nodo *&);
 
     public:
         Supervisores();

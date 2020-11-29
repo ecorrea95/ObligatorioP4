@@ -15,14 +15,23 @@ void CapaLogica :: registrarSupervisor(Supervisor * sup, TipoError &error)
         supervisores.Insert(sup);
 }
 
-void CapaLogica :: registrarVendedor(Vendedor * vend, TipoError &error)
+void CapaLogica :: registrarVendedor(Vendedor * vend, long int ced, TipoError &error)
 {
     error = SIN_ERROR;
-    long int ced = vend->getCedula();
-    if(vendedores.member(ced))
+    long int c = vend->getCedula();
+    if(vendedores.member(c))
         error = VENDEDOR_YA_EXISTE;
     else
-        vendedores.insert(vend);
+    {
+        if((supervisores.Member(ced)) == false)
+            error = SUPERVISOR_NO_EXISTE;
+        else
+        {
+            Supervisor * su = supervisores.Find(ced);
+            vend -> setSupervisor(su);
+            vendedores.insert(vend);
+        }
+    }
 }
 
 Iterador CapaLogica :: listarSupervisores(Iterador &iter)
@@ -38,7 +47,7 @@ Iterador CapaLogica :: listarVendedores(Iterador &iter)
 void CapaLogica :: listarVendedor(long int ced, TipoError &error)
 {
     error = SIN_ERROR;
-    ///IMPLEMENTAR UN LISTAR DE VENDEDOR?
+    ///Hay que crear un listado o devuelvo un vendedor y después en main mostramos atributos
 }
 
 void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
@@ -48,21 +57,18 @@ void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
         error = VENDEDOR_NO_EXISTE;
     else
     {
-        Vendedores vend = vendedores.find(ced);
-        vend.registrarcantventas(ced, ventas);
+        vendedores.find(ced)->setCantVentas(ventas);
     }
 }
 
-int CapaLogica :: sueldoTotal(Vendedor *vend)
+int CapaLogica :: sueldoTotal()
 {
-    if(vend.tipoObjeto() == "Fijo")
-        Fijo.calcularSueldo();
-    else
-        Zafral.calcularSueldo();
+    return vendedores.calcularmontototaldesueldos();
 }
 
 int CapaLogica :: cantZafralesHasta(Fecha f)
 {
-
+    return vendedores.contarcuantoszafrales(f);
 }
+
 

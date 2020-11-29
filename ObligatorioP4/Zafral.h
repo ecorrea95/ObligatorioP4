@@ -1,13 +1,14 @@
 #ifndef ZAFRAL_H_INCLUDED
 #define ZAFRAL_H_INCLUDED
 #include "Vendedor.h"
-#include "Fecha.h"
+
 
 class Zafral : public Vendedor{
 private:
     Fecha Vencimiento;
     int comisionVenta;
 public:
+    Zafral();
     Zafral(int, int, long int, String , /*Supervisor*/ Fecha, int);
     Fecha getFechaVencimiento();
     int getComision();

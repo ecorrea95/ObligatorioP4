@@ -2,17 +2,18 @@
 #define VENDEDOR_H_INCLUDED
 #include "Persona.h"
 #include "Supervisor.h"
+#include "Fecha.h"
 
 class Vendedor : public Persona
 {
 private:
     int sueldoBase;
     int cantVentas;
-    Supervisor * Super; ///Ver como borrarlo
+    Supervisor * Super;
 public:
     //Constructor común
     Vendedor(long int, String, int, int);
-    //Constructor de copia
+    void setSupervisor (Supervisor * su);
     int getSueldoBase();
     //Selectora de cantVentas
     int getCantVentas();
@@ -24,6 +25,7 @@ public:
     void setCantVentas(int);
 
     virtual String tipoObjeto () = 0;
+    ///Vendedor es Zafral
 
     ~Vendedor();
 

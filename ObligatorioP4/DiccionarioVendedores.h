@@ -20,7 +20,7 @@ class Vendedores
     Vendedor* FindVendedorRecu(NodoA *, long int);
     void registrarcantVentasRecu(NodoA *&, long int, int);
     int calcularmontototaldesueldosRecu(NodoA *);
-    int contarZafralesRecu(NodoA *, int cuenta);
+    int contarZafralesRecu(NodoA *, Fecha);
     void ListarRecu(NodoA *, Iterador &);
 
     public:
@@ -41,7 +41,7 @@ class Vendedores
         void listar(Iterador &);
         void registrarcantventas (long int, int);
         int calcularmontototaldesueldos();
-        int contarcuantoszafrales();
+        int contarcuantoszafrales(Fecha);
 
 
 

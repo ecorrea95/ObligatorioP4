@@ -31,3 +31,7 @@ void Vendedor :: setCantVentas(int c)
 {
     cantVentas = c;
 }
+void Vendedor :: setSupervisor (Supervisor * su)
+{
+    Super = su;
+}

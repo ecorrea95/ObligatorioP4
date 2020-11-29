@@ -6,78 +6,149 @@ using namespace std;
 
 int main()
 {
-    Fecha Colon(12,5,1494);
-    Fecha Guerra(5,9,1939);
-    Vendedor * Vend1 = new Zafral(25000, 15, 5088929, "Joaco", Colon, 3000);
-    Vendedor * Vend2 = new Zafral(178000, 3, 5458288, "Soledad", Guerra, 4000);
-    Vendedor * Vend3 = new Fijo(60000, 34, 5424324, "Xime", 3000);
-    Vendedor * Vend4 = new Fijo(15000, 3, 1234345, "Emiliano", 1400);
-    Vendedores diccio;
-    diccio.insert(Vend1);
-    diccio.insert(Vend2);
-    diccio.insert(Vend3);
-    diccio.insert(Vend4);
-    if(diccio.estaVacio())
-        cout << "Esta vacio" <<endl;
-    else
-        cout << "No esta vacio" << endl;
-    if(diccio.member(5088929))
-        cout << "Existe el vendedor" <<endl;
-    else
-        cout << "No existe vendedor" << endl;
-    Vendedor * v = diccio.find(5088929);
-    cout << v-> getCantVentas() << endl;
-    cout << v-> getCedula() << endl;
-    cout << "El monto total de sueldos es: "<< diccio.calcularmontototaldesueldos() << endl;
-    diccio.registrarcantventas(5088929, 24);
-    cout << "Cantidad de ventas luego: " << v-> getCantVentas() << endl;
-    cout << "Hay " << diccio.contarcuantoszafrales() << " Zafrales" << endl;
     Iterador iter;
-    diccio.listar(iter);
-    while(iter.HayMasPersonas())
+    TipoError tipo;
+    Persona * per;
+    Vendedor * vend;
+    Supervisor * Sup;
+    Fecha fec;
+    CapaLogica cap;
+    long int ceds = 0;
+    long int cedv = 0;
+    String nom;
+    String barrio;
+    int num = 0;
+    int num1 = 0;
+    int num2 = 0;
+    int dia, mes, anio;
+    int input = 100;
+    char option;
+    while(input != 0)
     {
-        Persona * per = iter.ProximaPersona();
-        cout << "La cedula es: " << per->getCedula() << " y su nombre es: ";
-        String ss = per->getNombre();
-        ss.print();
-        cout << endl << "Su tipo es : ";
-        ss = per->tipoObjeto();
-        ss.print();
-        cout << endl;
-    }
-    Supervisores Super;
-    Supervisor * Sup1 = new Supervisor(1342424, "Pedro", "Cordon", 3);
-    Supervisor * Sup2 = new Supervisor(6646464, "Agus", "Centro", 5);
-    Supervisor * Sup3 = new Supervisor(1010101, "Marcos", "Cerro", 1);
-    Supervisor * Sup4 = new Supervisor(4949339, "Santiago", "Carrasco", 5);
-    Super.Insert(Sup1);
-    Super.Insert(Sup2);
-    Super.Insert(Sup3);
-    Super.Insert(Sup4);
-    if(Super.Member(1010101))
-        cout<< "----------------------------------" << endl <<"Existe Supervisor" << endl;
-    else
-        cout << "No existe" << endl;
-    Supervisor * SupP = Super.Find(1010101);
-    cout << "El nombre es: " ;
-    String n = SupP->getNombre();
-    n.print();
-    cout << " su cedula es: " << SupP->getCedula() << endl;
-    Iterador iter2;
-    Super.listar(iter2);
-    while(iter2.HayMasPersonas())
-    {
-        Persona * per = iter2.ProximaPersona();
-        cout << "La cedula es: " << per->getCedula() << " y su nombre es: ";
-        String ss = per->getNombre();
-        ss.print();
-        cout << endl << "Su tipo es : ";
-        ss = per->tipoObjeto();
-        ss.print();
-        cout << endl;
-    }
+        if(input == 1)
+        {
+            bool salir = false;
+            do
+            {
+                cout << "Ingrese cedula del supervisor: " << endl;
+                cin >> ceds;
+                cout << "Ingrese nombre del supervisor: " << endl;
+                nom.scan();
+                cout << "Ingrese barrio: " << endl;
+                barrio.scan();
+                cout << "Ingrese cantidad de manzanas: " << endl;
+                cin >> num;
+                Sup = new Supervisor(ceds,nom,barrio,num);
+                cap.registrarSupervisor(Sup, tipo);
+                if(tipo != SIN_ERROR)
+                {
+                    cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
+                    cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
+                    cin >> option;
+                    if(option == 'S' || option == 's')
+                        salir = true;
+                }
+            }while(tipo != SIN_ERROR && !salir);
+        }
+        else if(input == 2)
+        {
+            bool salir = false;
+            do
+            {
+                cout << "Ingrese cedula del supervisor: " << endl;
+                cin >> ceds;
+                cout << "Ingrese nombre del vendedor: " << endl;
+                nom.scan();
+                cout << "Ingrese cedula del vendedor: " << endl;
+                cin >> cedv;
+                cout << "Ingrese sueldo base: " << endl;
+                cin >> num;
+                cout << "Ingrese cantidad de ventas: " << endl;
+                cin >> num1;
+                cout << "Ingrese si vendedor es zafral: Z o fijo: F " << endl;
+                cin >> option;
+                if(option == 'Z' || option == 'z')
+                {
+                    cout << "Ingrese fecha de vencimiento: dd/mm/aaaa" << endl;
+                    cin >> dia; cin >> mes; cin >> anio;
+                    Fecha fec1 (dia, mes, anio);
+                    cout << "Ingrese la comisión por venta: ";
+                    cin >> num2;
+                    vend = new Zafral(num, num1, cedv, nom, fec1, num2);
+                    cap.registrarVendedor(vend, ceds, tipo);
+                    cout << endl;
+                }
+                else if(option == 'F' || option == 'f')
+                {
+                    cout << "Ingrese plus: ";
+                    cin >> num2;
+                    vend = new Fijo(num, num1, cedv, nom, num2);
+                    cap.registrarVendedor(vend, ceds, tipo);
+                    cout << endl;
+                }
+                else
+                    tipo = NO_INGRESA_TIPO;
+                if(tipo != SIN_ERROR)
+                {
+                    cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
+                    cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
+                    cin >> option;
+                    if(option == 'S' || option == 's')
+                    {
+                        salir = true;
+                        system("cls");
+                    }
+                }
+            }while(tipo != SIN_ERROR && !salir);
+        }
+        else if(input == 3)
+        {
+            cap.listarSupervisores(iter);
+            if(!iter.HayMasPersonas())
+                cout << "Error: no hay mas personas." << endl;
+            while(iter.HayMasPersonas())
+            {
+                per = iter.ProximaPersona();
+                cout << "Cedula: "<<per->getCedula() << " - ";
+                per->getNombre().print();
+                cout << " - Barrio: ";
+                ((Supervisor*) per)->getbarrio().print();
+                cout << " - Manzanas: " << ((Supervisor*) per) -> getcantManzanas() << endl;
+            }
+            iter.~Iterador();
+            system("cls");
 
+        }
+        else if(input == 4)
+        {
+            cap.listarSupervisores(iter);
+            if(!iter.HayMasPersonas())
+                cout << "Error: no hay mas personas." << endl;
+            while(iter.HayMasPersonas())
+            {
+                per = iter.ProximaPersona();
+                cout << "Cedula: " << per->getCedula() << " - ";
+                per->getNombre().print();
+                cout << "- Tipo Vendedor: ";
+                ((Vendedor*) per)->tipoObjeto().print();
+            }
+            iter.~Iterador();
+            system("cls");
+        }
+        else if(option < 50)
+        {
+            cout << "La opcion ingresada no es correcta. " << endl;
+            cout << "Ingrese nuevamente: " << endl;
+            cout << "Ingrese una opcion: ";
+        }
+        else
+        {
 
+        }
+        cout << "Ingrese una opcion: ";
+        cin >> input;
+        system("cls");
+    }
 
 
 }

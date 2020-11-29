@@ -153,3 +153,85 @@
 1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.cpp
 	"Zafral.h"
 
+1606621785 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.cpp
+	"CapaLogica.h"
+
+1606594975 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.h
+	"DiccionarioSupervisores.h"
+	"DiccionarioVendedores.h"
+	"TipoError.h"
+
+1606584660 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariosupervisores.h
+	"Supervisor.h"
+	"Iterador.h"
+
+1606615696 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\supervisor.h
+	"Persona.h"
+
+1606580752 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\persona.h
+	"String.h"
+
+1606580752 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\string.h
+	<string.h>
+
+1606580752 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\iterador.h
+	"Persona.h"
+
+1606591538 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.h
+	"Vendedor.h"
+	"Iterador.h"
+	"Zafral.h"
+	"Fijo.h"
+
+1606594856 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\vendedor.h
+	"Persona.h"
+	"Supervisor.h"
+	"Fecha.h"
+
+1606594123 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\zafral.h
+	"Vendedor.h"
+
+1606580752 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fecha.h
+
+1606594856 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fijo.h
+	"Vendedor.h"
+
+1606619905 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\tipoerror.h
+
+1606623279 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.cpp
+	"DiccionarioVendedores.h"
+
+1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fecha.cpp
+	"Fecha.h"
+
+1606594856 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fijo.cpp
+	"Fijo.h"
+
+1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\iterador.cpp
+	"Iterador.h"
+
+1606669009 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\main.cpp
+	<iostream>
+	"DiccionarioVendedores.h"
+	"DiccionarioSupervisores.h"
+	"CapaLogica.h"
+
+1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\persona.cpp
+	"Persona.h"
+
+1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\string.cpp
+	"String.h"
+	<iostream>
+
+1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\supervisor.cpp
+	"Supervisor.h"
+
+1606589980 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\vendedor.cpp
+	"Vendedor.h"
+
+1606593527 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\zafral.cpp
+	"Zafral.h"
+
+1606584691 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariosupervisores.cpp
+	"DiccionarioSupervisores.h"
+

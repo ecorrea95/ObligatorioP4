@@ -19,14 +19,17 @@ void Vendedores :: ListarRecu(NodoA * a, Iterador &iter)
         ListarRecu(a -> hder, iter);
     }
 }
-int Vendedores :: contarZafralesRecu(NodoA * a, int cuenta)
+int Vendedores :: contarZafralesRecu(NodoA * a, Fecha Fec)
 {
     if(a != NULL)
     {
         if(a -> info -> tipoObjeto() == "Zafral")
-            return 1 + contarZafralesRecu(a -> hizq, cuenta) + contarZafralesRecu(a -> hder, cuenta);
+        {
+            if(((((Zafral *)a)->getFechaVencimiento()) < Fec) == false) ///no tenemos implementado > hay que ir por la negación
+                return 1 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
+        }
         else
-            return 0 + contarZafralesRecu(a -> hizq, cuenta) + contarZafralesRecu(a -> hder, cuenta);
+            return 0 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
     }
     else
     {
@@ -44,14 +47,20 @@ int Vendedores :: calcularmontototaldesueldosRecu(NodoA * a)
 
 bool Vendedores :: MemberRecu (NodoA * a, long int ced)
 {
-    if(a ->info->getCedula() == ced)
+    if(a != NULL)
     {
-        return true;
+        if(a ->info->getCedula() == ced)
+        {
+            return true;
+        }
+        else
+        {
+            if (ced < a->info->getCedula())
+                return MemberRecu(a->hizq, ced);
+            else
+                return MemberRecu(a->hder, ced);
+        }
     }
-    else if (ced < a->info->getCedula())
-        return MemberRecu(a->hizq, ced);
-    else if (ced > a->info->getCedula())
-        return MemberRecu(a->hder, ced);
     else
         return false;
 
@@ -112,7 +121,7 @@ bool Vendedores :: estaVacio ()
 {
     return (ABBVendedores == NULL);
 }
-void Vendedores :: listar(Iterador &iter) ///Debería ir como método privado
+void Vendedores :: listar(Iterador &iter)
 {
     NodoA * a = ABBVendedores;
     ListarRecu(a, iter);
@@ -125,10 +134,9 @@ int Vendedores :: calcularmontototaldesueldos()
 {
     return calcularmontototaldesueldosRecu(ABBVendedores);
 }
-int Vendedores :: contarcuantoszafrales()
+int Vendedores :: contarcuantoszafrales(Fecha fec)
 {
-    int cuenta = 0;
-    return contarZafralesRecu(ABBVendedores, cuenta);
+    return contarZafralesRecu(ABBVendedores, fec);
 }
 
 

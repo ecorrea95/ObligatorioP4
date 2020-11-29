@@ -3,6 +3,14 @@ int Supervisores :: h (long int clave)
 {
     return(clave % B);
 }
+void Supervisores :: BorrarListaRecu(Nodo * &L)
+{
+    if(L != NULL)
+    {
+        BorrarListaRecu(L -> sig);
+        L = NULL;
+    }
+}
 void Supervisores :: listarRecu(Nodo * L, Iterador &iter)
 {
     Nodo * aux = L;
@@ -58,8 +66,8 @@ Supervisores :: Supervisores()
 }
 Supervisores :: ~Supervisores ()
 {
-    ///recorrer cada cubeta
-    ///Borrar lista
+    for(int i = 0; i < B; i++)
+        BorrarListaRecu(hash[i]); ///NO se si está bien lo hice así nomás
 }
 bool Supervisores :: Member(long int ced)
 {

@@ -33,3 +33,4 @@ String Fijo :: tipoObjeto()
     String tipo = "Fijo";
     return (String) tipo;
 }
+
