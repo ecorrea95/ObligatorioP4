@@ -87,7 +87,7 @@ Supervisor * Supervisores :: Find(long int ced)
     Nodo* L = hash[cubeta];
     return devolverEnLista(L, ced);
 }
-void Supervisores :: listar(Iterador &iter)
+void Supervisores :: Listar(Iterador &iter)
 {
     for(int i = 0; i < B; i++)
         listarRecu(hash[i], iter);

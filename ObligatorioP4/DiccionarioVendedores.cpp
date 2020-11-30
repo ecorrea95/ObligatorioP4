@@ -25,7 +25,7 @@ int Vendedores :: contarZafralesRecu(NodoA * a, Fecha Fec)
     {
         if(a -> info -> tipoObjeto() == "Zafral")
         {
-            if(((((Zafral *)a)->getFechaVencimiento()) < Fec) == false) ///no tenemos implementado > hay que ir por la negación
+            if(!((((Zafral *)a)->getFechaVencimiento()) < Fec)) ///no tenemos implementado > hay que ir por la negación
                 return 1 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
         }
         else

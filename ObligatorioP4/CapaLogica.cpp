@@ -34,20 +34,28 @@ void CapaLogica :: registrarVendedor(Vendedor * vend, long int ced, TipoError &e
     }
 }
 
-Iterador CapaLogica :: listarSupervisores(Iterador &iter)
+void CapaLogica :: listarSupervisores (Iterador &iter)
 {
-    supervisores.listar(iter);
+    supervisores.Listar(iter);
 }
 
-Iterador CapaLogica :: listarVendedores(Iterador &iter)
+void CapaLogica :: listarVendedores(Iterador &iter)
 {
     vendedores.listar(iter);
 }
 
-void CapaLogica :: listarVendedor(long int ced, TipoError &error)
+Vendedor* CapaLogica :: listarVendedor(long int ced, Vendedor * &vend, TipoError &error)
 {
     error = SIN_ERROR;
-    ///Hay que crear un listado o devuelvo un vendedor y después en main mostramos atributos
+    if(vendedores.member(ced))
+    {
+        vend = vendedores.find(ced);
+    }
+    else
+    {
+        vend = NULL;
+        error = VENDEDOR_NO_EXISTE;
+    }
 }
 
 void CapaLogica :: ventasSemanales(int ventas, long int ced, TipoError &error)
@@ -70,5 +78,14 @@ int CapaLogica :: cantZafralesHasta(Fecha f)
 {
     return vendedores.contarcuantoszafrales(f);
 }
+void CapaLogica :: registrarVentas(long int ced, int num, TipoError &tipo)
+{
+    tipo = SIN_ERROR;
+    if(vendedores.member(ced))
+        vendedores.registrarcantventas(ced, num);
+    else
+        tipo = VENDEDOR_NO_EXISTE;
+}
+
 
 

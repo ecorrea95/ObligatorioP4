@@ -23,8 +23,12 @@ int main()
     int dia, mes, anio;
     int input = 100;
     char option;
+    int i = 1;
     while(input != 0)
     {
+        cout << "Ingrese una opcion: ";
+        cin >> input;
+        system("cls");
         if(input == 1)
         {
             bool salir = false;
@@ -33,6 +37,7 @@ int main()
                 cout << "Ingrese cedula del supervisor: " << endl;
                 cin >> ceds;
                 cout << "Ingrese nombre del supervisor: " << endl;
+                nom.scan();
                 nom.scan();
                 cout << "Ingrese barrio: " << endl;
                 barrio.scan();
@@ -58,6 +63,7 @@ int main()
                 cout << "Ingrese cedula del supervisor: " << endl;
                 cin >> ceds;
                 cout << "Ingrese nombre del vendedor: " << endl;
+                nom.scan();
                 nom.scan();
                 cout << "Ingrese cedula del vendedor: " << endl;
                 cin >> cedv;
@@ -105,49 +111,80 @@ int main()
         {
             cap.listarSupervisores(iter);
             if(!iter.HayMasPersonas())
-                cout << "Error: no hay mas personas." << endl;
+                cout << "Error: no hay supervisores para listar." << endl;
             while(iter.HayMasPersonas())
             {
                 per = iter.ProximaPersona();
-                cout << "Cedula: "<<per->getCedula() << " - ";
+                cout << "Cedula: "<<per->getCedula() << " - Nombre: ";
                 per->getNombre().print();
                 cout << " - Barrio: ";
                 ((Supervisor*) per)->getbarrio().print();
                 cout << " - Manzanas: " << ((Supervisor*) per) -> getcantManzanas() << endl;
             }
             iter.~Iterador();
-            system("cls");
-
         }
         else if(input == 4)
         {
-            cap.listarSupervisores(iter);
+            cap.listarVendedores(iter);
             if(!iter.HayMasPersonas())
-                cout << "Error: no hay mas personas." << endl;
+                cout << "Error: no hay vendedores para listar." << endl;
             while(iter.HayMasPersonas())
             {
                 per = iter.ProximaPersona();
-                cout << "Cedula: " << per->getCedula() << " - ";
+                cout << "Cedula: " << per->getCedula() << " - Nombre: ";
                 per->getNombre().print();
                 cout << "- Tipo Vendedor: ";
                 ((Vendedor*) per)->tipoObjeto().print();
             }
             iter.~Iterador();
-            system("cls");
         }
-        else if(option < 50)
+        else if(input == 5)
         {
-            cout << "La opcion ingresada no es correcta. " << endl;
-            cout << "Ingrese nuevamente: " << endl;
-            cout << "Ingrese una opcion: ";
+            cout << "Ingrese cedula del vendedor: ";
+            cin >> cedv;
+            cap.listarVendedor(cedv, vend, tipo);
+            if(tipo == SIN_ERROR)
+            {
+                cout << "Cedula: "<<vend-> getCedula() << " - Nombre: ";
+                vend->getNombre().print();
+                cout << " - Sueldo Base: " << vend->getSueldoBase();
+                cout << " - Cantidad de ventas: " << vend->getCantVentas();
+                cout << " - Tipo vendedor: ";
+                vend ->tipoObjeto().print();
+                cout << endl << "El supervisor asignado al vendedor es: " << endl;
+                Sup = vend->getSupervisor();
+                cout << "Nombre: ";
+                Sup->getNombre().print();
+                cout << " - Cedula: " << Sup->getCedula() << endl;
+            }
+        }
+        else if(input == 6)
+        {
+            cout << "Ingrese cedula del vendedor: ";
+            cin >> cedv;
+            cout << "Ingrese la cantidad de ventas: ";
+            cin >> num;
+            cap.registrarVentas(cedv, num, tipo);
+            if(tipo == VENDEDOR_NO_EXISTE)
+                cout << "Error: vendedor no existe" << endl;
+        }
+        else if(input == 7)
+        {
+            cout << "El monto total a pagar es: " << cap.sueldoTotal() << endl;
+        }
+        else if(input == 8)
+        {
+            cout << "Ingrese fecha: dd/mm/aaaa" << endl;
+                    cin >> dia; cin >> mes; cin >> anio;
+                    Fecha fec1 (dia, mes, anio);
+            cout << "La cantidad de vendedores zafrales que estaran contratados luego de " << dia << "/" << mes << "/" << anio << " es: " << cap.cantZafralesHasta(fec1) << endl;
+
         }
         else
         {
-
+            cout << "La opcion ingresada no es correcta. " << endl;
+            cout << "Ingrese nuevamente: " << endl;
         }
-        cout << "Ingrese una opcion: ";
-        cin >> input;
-        system("cls");
     }
 
 

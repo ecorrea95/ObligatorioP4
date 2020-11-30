@@ -25,7 +25,7 @@ class Supervisores
         bool Member(long int);
         void Insert(Supervisor *);
         Supervisor* Find(long int);
-        void listar(Iterador &);
+        void Listar(Iterador &);
 };
 
 

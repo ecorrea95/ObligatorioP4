@@ -11,7 +11,10 @@ Vendedor :: ~Vendedor()
 {
     ///No se si usamos así pero para poder probar
 }
-
+Supervisor* Vendedor::  getSupervisor ()
+{
+    return Super;
+}
 int Vendedor::getSueldoBase()
 {
     return sueldoBase;

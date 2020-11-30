@@ -15,6 +15,7 @@ public:
     Vendedor(long int, String, int, int);
     void setSupervisor (Supervisor * su);
     int getSueldoBase();
+    Supervisor* getSupervisor ();
     //Selectora de cantVentas
     int getCantVentas();
     //Modificador de sueldoBase

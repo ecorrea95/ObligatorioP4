@@ -3,7 +3,6 @@
 #include "DiccionarioSupervisores.h"
 #include "DiccionarioVendedores.h"
 #include "TipoError.h"
-
 class CapaLogica : public Vendedores, public Supervisores //Para mi no hereda nada
 {
 private:
@@ -20,17 +19,19 @@ public:
     //Devuelve un error si el supervisor ya existe
     void registrarVendedor(Vendedor *, long int, TipoError &);
     //Devuelve un iterador con todos los supervisores
-    Iterador listarSupervisores(Iterador &iter);
+    void listarSupervisores(Iterador &iter);
     //Devuelve un iterador con todos los vendedores
-    Iterador listarVendedores(Iterador &iter);
+    void listarVendedores(Iterador &iter);
     //Lista un vendedor dado
-    void listarVendedor(long int,TipoError &);
+    Vendedor* listarVendedor(long int, Vendedor *&, TipoError &);
     //Registrar la cantidad de ventas realizadas por un vendedor en una semana
     void ventasSemanales(int, long int, TipoError &);
     //Calcular el sueldo de todos los vendedores registrados
     int sueldoTotal();
     //Devuelve cuantos zafrales se encuentran registrados antes de X fecha
     int cantZafralesHasta(Fecha);
+
+    void registrarVentas(long int, int, TipoError &);
 
 };
 
