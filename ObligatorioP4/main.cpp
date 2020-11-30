@@ -59,10 +59,11 @@ int main()
                     cin >> num;
                     Sup = new Supervisor(ceds,nom,barrio,num);
                     cap.registrarSupervisor(Sup, tipo);
-                    if(tipo != SIN_ERROR)
+                    if(tipo == SUPERVISOR_YA_EXISTE)
                     {
-                        cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
-                        cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
+                        cout << "Error: El supervisor ya existe en el sistema" << endl;
+                        cout << "Desea ingresar nuevamente o salir?" << endl;
+                        cout << "Ingrese S para salir o N para ingresar nuevamente: " << endl;
                         cin >> option;
                         if(option == 'S' || option == 's')
                             salir = true;
