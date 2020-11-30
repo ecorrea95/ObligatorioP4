@@ -72,7 +72,7 @@
 	"Supervisor.h"
 	"Iterador.h"
 
-1606318538 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fecha.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fecha.cpp
 	"Fecha.h"
 
 1606318538 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fecha.h
@@ -96,59 +96,60 @@
 	"String.h"
 	<iostream>
 
-1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariosupervisores.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariosupervisores.cpp
 	"DiccionarioSupervisores.h"
 
-1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariosupervisores.h
+1606757923 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariosupervisores.h
 	"Supervisor.h"
 	"Iterador.h"
 
 1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\supervisor.h
 	"Persona.h"
 
-1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.cpp
 	"DiccionarioVendedores.h"
 
-1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.h
+1606757923 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\diccionariovendedores.h
 	"Vendedor.h"
 	"Iterador.h"
 	"Zafral.h"
 	"Fijo.h"
 
-1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.h
+1606757924 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.h
 	"Persona.h"
 	"Supervisor.h"
-
-1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.h
-	"Vendedor.h"
 	"Fecha.h"
+
+1606757924 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.h
+	"Vendedor.h"
 
 1606480655 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fijo.h
 	"Vendedor.h"
 
-1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fijo.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\fijo.cpp
 	"Fijo.h"
 
-1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\main.cpp
+1606763084 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\main.cpp
 	<iostream>
 	"DiccionarioVendedores.h"
 	"DiccionarioSupervisores.h"
+	"CapaLogica.h"
 
 1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\supervisor.cpp
 	"Supervisor.h"
 
-1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\vendedor.cpp
 	"Vendedor.h"
 
-1606516451 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\capalogica.cpp
+1606757923 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\capalogica.cpp
 	"CapaLogica.h"
 
-1606499476 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\capalogica.h
+1606757923 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\capalogica.h
 	"DiccionarioSupervisores.h"
 	"DiccionarioVendedores.h"
 	"TipoError.h"
 
-1606498907 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\tipoerror.h
+1606757923 c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\tipoerror.h
 
 1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.cpp
 	"Zafral.h"

@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+    bool salir = false;
     Iterador iter;
     TipoError tipo;
     Persona * per;
@@ -36,202 +37,207 @@ int main()
         cout << "8 - Dada una fecha, contar cuantos de los vendedores zafrales actualmente registrados estaran contratados hasta despues" << endl << "de esa fecha." << endl;
         cin >> input;
         system("cls");
-        if(input == 0)
-        {
-            cap.~CapaLogica();
-            iter.~Iterador();
-        }
-        else if(input == 1)
-        {
-            bool salir = false;
-            do
+        switch(input) {
+            case 0:
             {
-                cout << "Ingrese cedula del supervisor: " << endl;
-                cin >> ceds;
-                cout << "Ingrese nombre del supervisor: " << endl;
-                nom.scan();
-                nom.scan();
-                cout << "Ingrese barrio: " << endl;
-                barrio.scan();
-                cout << "Ingrese cantidad de manzanas: " << endl;
-                cin >> num;
-                Sup = new Supervisor(ceds,nom,barrio,num);
-                cap.registrarSupervisor(Sup, tipo);
-                if(tipo != SIN_ERROR)
-                {
-                    cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
-                    cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
-                    cin >> option;
-                    if(option == 'S' || option == 's')
-                        salir = true;
-                }
-            }while(tipo != SIN_ERROR && !salir);
-        }
-        else if(input == 2)
-        {
-            bool salir = false;
-            do
-            {
-                cout << "Ingrese cedula del supervisor: " << endl;
-                cin >> ceds;
-                cout << "Ingrese nombre del vendedor: " << endl;
-                nom.scan();///Si pongo una sola se la saltea
-                nom.scan();
-                cout << "Ingrese cedula del vendedor: " << endl;
-                cin >> cedv;
-                cout << "Ingrese sueldo base: " << endl;
-                cin >> num;
-                cout << "Ingrese cantidad de ventas: " << endl;
-                cin >> num1;
-                cout << "Ingrese si vendedor es zafral: Z o fijo: F " << endl;
-                cin >> option;
-                bool invalida = false;
-                if(option == 'Z' || option == 'z')
-                {
-                    cout << "Ingrese fecha de vencimiento: dd/mm/aaaa" << endl;
-                    cin >> dia; cin >> mes; cin >> anio;
-                    Fecha fec (dia, mes, anio);
-                    if(!fec.esValida())
-                        invalida = true;
-                    cout << "Ingrese la comision por venta: ";
-                    cin >> num2;
-                    vend = new Zafral(num, num1, cedv, nom, fec1, num2);
-                    cap.registrarVendedor(vend, ceds, tipo);
-                    cout << endl;
-                }
-                else if(option == 'F' || option == 'f')
-                {
-                    cout << "Ingrese plus: ";
-                    cin >> num2;
-                    vend = new Fijo(num, num1, cedv, nom, num2);
-                    cap.registrarVendedor(vend, ceds, tipo);
-                    cout << endl;
-                }
-                else
-                    tipo = NO_INGRESA_TIPO;
-                if(tipo != SIN_ERROR)
-                {
-                    if(invalida)
-                        cout << "Error: la fecha ingresada no es valida, Desea ingresar nuevamente o salir? " << endl;
-                    else
-                    {
-                        cout << "Error: ";
-                        if(tipo == NO_INGRESA_TIPO)
-                            cout << "No ingresa tipo";
-                        else if(tipo == VENDEDOR_YA_EXISTE)
-                            cout << "Vendedor ya existe";
-                        else
-                            cout << "Supervisor no existe";
-
-                        cout << " Desea ingresar nuevamente o salir?" << endl;
-                    }
-                    cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
-                    cin >> option;
-                    if(option == 'S' || option == 's')
-                    {
-                        salir = true;
-                        system("cls");
-                    }
-                }
-            }while(tipo != SIN_ERROR && !salir);
-        }
-        else if(input == 3)
-        {
-            cap.listarSupervisores(iter);
-            if(!iter.HayMasPersonas())
-                cout << "Error: no hay supervisores para listar." << endl;
-            while(iter.HayMasPersonas())
-            {
-                per = iter.ProximaPersona();
-                cout << "Cedula: "<<per->getCedula() << " - Nombre: ";
-                per->getNombre().print();
-                cout << " - Barrio: ";
-                ((Supervisor*) per)->getbarrio().print();
-                cout << " - Manzanas: " << ((Supervisor*) per) -> getcantManzanas() << endl;
+                cap.~CapaLogica();
+                iter.~Iterador();
+                break;
             }
-            iter.~Iterador();
-        }
-        else if(input == 4)
-        {
-            cap.listarVendedores(iter);
-            if(!iter.HayMasPersonas())
-                cout << "Error: no hay vendedores para listar." << endl;
-            while(iter.HayMasPersonas())
+            case 1:
             {
-                per = iter.ProximaPersona();
-                cout << "Cedula: " << per->getCedula() << " - Nombre: ";
-                per->getNombre().print();
-                cout << "- Tipo Vendedor: ";
-                ((Vendedor*) per)->tipoObjeto().print();
-                cout << endl;
-            }
-            iter.~Iterador();
-        }
-        else if(input == 5)
-        {
-            cout << "Ingrese cedula del vendedor: ";
-            cin >> cedv;
-            cap.listarVendedor(cedv, vend, tipo);
-            if(tipo == SIN_ERROR)
-            {
-                cout << "Cedula: "<<vend-> getCedula() << " - Nombre: ";
-                vend->getNombre().print();
-                cout << " - Sueldo Base: " << vend->getSueldoBase();
-                cout << " - Cantidad de ventas: " << vend->getCantVentas();
-                cout << " - Tipo vendedor: ";
-                vend ->tipoObjeto().print();
-                cout << endl << "El supervisor asignado al vendedor es: " << endl;
-                Sup = vend->getSupervisor();
-                cout << "Nombre: ";
-                Sup->getNombre().print();
-                cout << " - Cedula: " << Sup->getCedula() << endl;
-            }
-        }
-        else if(input == 6)
-        {
-            cout << "Ingrese cedula del vendedor: ";
-            cin >> cedv;
-            cout << "Ingrese la cantidad de ventas: ";
-            cin >> num;
-            cap.registrarVentas(cedv, num, tipo);
-            if(tipo == VENDEDOR_NO_EXISTE)
-                cout << "Error: vendedor no existe" << endl;
-        }
-        else if(input == 7)
-        {
-            cout << "El monto total a pagar es: " << cap.sueldoTotal() << endl;
-        }
-        else if(input == 8)
-        {
-                    cout << "Ingrese fecha: dd/mm/aaaa" << endl;
-                    cin >> dia; cin >> mes; cin >> anio;
-                    Fecha fec2 (dia, mes, anio);
-                    bool salir = false;
-                    while((fec2.esValida() == false) && !salir)
+                do
+                {
+                    cout << "Ingrese cedula del supervisor: " << endl;
+                    cin >> ceds;
+                    cout << "Ingrese nombre del supervisor: " << endl;
+                    nom.scan();
+                    nom.scan();
+                    cout << "Ingrese barrio: " << endl;
+                    barrio.scan();
+                    cout << "Ingrese cantidad de manzanas: " << endl;
+                    cin >> num;
+                    Sup = new Supervisor(ceds,nom,barrio,num);
+                    cap.registrarSupervisor(Sup, tipo);
+                    if(tipo != SIN_ERROR)
                     {
-                        cout << "Error: la fecha ingresada no es correcta." << endl;
-                        cout << "Ingrese N para ingresar nuevmaente o ingrese S para salir. " << endl;
+                        cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
+                        cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
                         cin >> option;
-                        if (option == 'S' || option == 's')
+                        if(option == 'S' || option == 's')
                             salir = true;
+                    }
+                }while(tipo != SIN_ERROR && !salir);
+                break;
+            }
+            case 2:
+            {
+                do
+                {
+                    cout << "Ingrese cedula del supervisor: " << endl;
+                    cin >> ceds;
+                    cout << "Ingrese nombre del vendedor: " << endl;
+                    nom.scan();///Si pongo una sola se la saltea
+                    nom.scan();
+                    cout << "Ingrese cedula del vendedor: " << endl;
+                    cin >> cedv;
+                    cout << "Ingrese sueldo base: " << endl;
+                    cin >> num;
+                    cout << "Ingrese cantidad de ventas: " << endl;
+                    cin >> num1;
+                    cout << "Ingrese si vendedor es zafral: Z o fijo: F " << endl;
+                    cin >> option;
+                    bool invalida = false;
+                    if(option == 'Z' || option == 'z')
+                    {
+                        cout << "Ingrese fecha de vencimiento: dd/mm/aaaa" << endl;
+                        cin >> dia; cin >> mes; cin >> anio;
+                        Fecha fec (dia, mes, anio);
+                        if(!fec.esValida())
+                            invalida = true;
+                        cout << "Ingrese la comision por venta: ";
+                        cin >> num2;
+                        vend = new Zafral(num, num1, cedv, nom, fec1, num2);
+                        cap.registrarVendedor(vend, ceds, tipo);
+                        cout << endl;
+                    }
+                    else if(option == 'F' || option == 'f')
+                    {
+                        cout << "Ingrese plus: ";
+                        cin >> num2;
+                        vend = new Fijo(num, num1, cedv, nom, num2);
+                        cap.registrarVendedor(vend, ceds, tipo);
+                        cout << endl;
+                    }
+                    else
+                        tipo = NO_INGRESA_TIPO;
+                    if(tipo != SIN_ERROR)
+                    {
+                        if(invalida)
+                            cout << "Error: la fecha ingresada no es valida, Desea ingresar nuevamente o salir? " << endl;
                         else
                         {
-                            cout << "Ingrese fecha: dd/mm/aaaa" << endl;
-                            cin >> dia; cin >> mes; cin >> anio;
-                            Fecha fecaux (dia, mes, anio);
-                            fec2 = fecaux;
+                            cout << "Error: ";
+                            if(tipo == NO_INGRESA_TIPO)
+                                cout << "No ingresa tipo";
+                            else if(tipo == VENDEDOR_YA_EXISTE)
+                                cout << "Vendedor ya existe";
+                            else
+                                cout << "Supervisor no existe";
+
+                            cout << " Desea ingresar nuevamente o salir?" << endl;
+                        }
+                        cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
+                        cin >> option;
+                        if(option == 'S' || option == 's')
+                        {
+                            salir = true;
+                            system("cls");
                         }
                     }
-                    if(!salir)
-                        cout << "La cantidad de vendedores zafrales que estaran contratados luego de " << dia << "/" << mes << "/" << anio << " es: " << cap.cantZafralesHasta(fec2) << endl;
-
-        }
-        else
-        {
-            cout << "La opcion ingresada no es correcta. " << endl;
-            cout << "Ingrese nuevamente: " << endl;
+                }while(tipo != SIN_ERROR && !salir);
+                break;
+            }
+            case 3:
+            {
+                cap.listarSupervisores(iter);
+                if(!iter.HayMasPersonas())
+                    cout << "Error: no hay supervisores para listar." << endl;
+                while(iter.HayMasPersonas())
+                {
+                    per = iter.ProximaPersona();
+                    cout << "Cedula: "<<per->getCedula() << " - Nombre: ";
+                    per->getNombre().print();
+                    cout << " - Barrio: ";
+                    ((Supervisor*) per)->getbarrio().print();
+                    cout << " - Manzanas: " << ((Supervisor*) per) -> getcantManzanas() << endl;
+                }
+                iter.~Iterador();
+                break;
+            }
+            case 4:
+            {
+                cap.listarVendedores(iter);
+                if(!iter.HayMasPersonas())
+                    cout << "Error: no hay vendedores para listar." << endl;
+                while(iter.HayMasPersonas())
+                {
+                    per = iter.ProximaPersona();
+                    cout << "Cedula: " << per->getCedula() << " - Nombre: ";
+                    per->getNombre().print();
+                    cout << "- Tipo Vendedor: ";
+                    ((Vendedor*) per)->tipoObjeto().print();
+                    cout << endl;
+                }
+                iter.~Iterador();
+                break;
+            }
+            case 5:
+            {
+                cout << "Ingrese cedula del vendedor: ";
+                cin >> cedv;
+                cap.listarVendedor(cedv, vend, tipo);
+                if(tipo == SIN_ERROR)
+                {
+                    cout << "Cedula: "<<vend-> getCedula() << " - Nombre: ";
+                    vend->getNombre().print();
+                    cout << " - Sueldo Base: " << vend->getSueldoBase();
+                    cout << " - Cantidad de ventas: " << vend->getCantVentas();
+                    cout << " - Tipo vendedor: ";
+                    vend ->tipoObjeto().print();
+                    cout << endl << "El supervisor asignado al vendedor es: " << endl;
+                    Sup = vend->getSupervisor();
+                    cout << "Nombre: ";
+                    Sup->getNombre().print();
+                    cout << " - Cedula: " << Sup->getCedula() << endl;
+                }
+                break;
+            }
+            case 6:
+            {
+                cout << "Ingrese cedula del vendedor: ";
+                cin >> cedv;
+                cout << "Ingrese la cantidad de ventas: ";
+                cin >> num;
+                cap.registrarVentas(cedv, num, tipo);
+                if(tipo == VENDEDOR_NO_EXISTE)
+                    cout << "Error: vendedor no existe" << endl;
+                break;
+            }
+            case 7:
+            {
+                cout << "El monto total a pagar es: " << cap.sueldoTotal() << endl;
+                break;
+            }
+            case 8:
+            {
+                cout << "Ingrese fecha: dd/mm/aaaa" << endl;
+                cin >> dia; cin >> mes; cin >> anio;
+                Fecha fec2 (dia, mes, anio);
+                while((fec2.esValida() == false) && !salir)
+                {
+                    cout << "Error: la fecha ingresada no es correcta." << endl;
+                    cout << "Ingrese N para ingresar nuevmaente o ingrese S para salir. " << endl;
+                    cin >> option;
+                    if (option == 'S' || option == 's')
+                        salir = true;
+                    else
+                    {
+                        cout << "Ingrese fecha: dd/mm/aaaa" << endl;
+                        cin >> dia; cin >> mes; cin >> anio;
+                        Fecha fecaux (dia, mes, anio);
+                        fec2 = fecaux;
+                    }
+                }
+                if(!salir)
+                    cout << "La cantidad de vendedores zafrales que estaran contratados luego de " << dia << "/" << mes << "/" << anio << " es: " << cap.cantZafralesHasta(fec2) << endl;
+                break;
+            }
+            default:
+            {
+                cout << "La opcion ingresada no es correcta. " << endl;
+                cout << "Ingrese nuevamente: " << endl;
+            }
         }
     }
-
-
 }
