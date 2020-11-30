@@ -22,6 +22,7 @@ class Vendedores
     int calcularmontototaldesueldosRecu(NodoA *);
     int contarZafralesRecu(NodoA *, Fecha);
     void ListarRecu(NodoA *, Iterador &);
+    void destruirArbol(NodoA *&);
 
     public:
         Vendedores ();

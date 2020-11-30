@@ -11,7 +11,7 @@ int main()
     Persona * per;
     Vendedor * vend;
     Supervisor * Sup;
-    Fecha fec;
+    Fecha fec1;
     CapaLogica cap;
     long int ceds = 0;
     long int cedv = 0;
@@ -26,10 +26,22 @@ int main()
     int i = 1;
     while(input != 0)
     {
-        cout << "Ingrese una opcion: ";
+        cout << "******Ingrese una opcion: ******" << endl;
+        cout << "0 - Salir." << endl;
+        cout << "1 - Registrar los datos de un nuevo supervisor. " << endl << "2 - Dar de alta al vendedor en el sistema." << endl;
+        cout << "3 - Listado de supervisores registrados." << endl << "4 - Listado de vendedores registrados ordenados por cedula." << endl;
+        cout << "5 - Dada la cedula de un vendedor, listar todos sus datos junto con los datos de su supervisor." << endl;
+        cout << "6 - Registrar la cantidad de ventas que realizo el vendedor en la semana." << endl;
+        cout << "7 - Calcular el monto total de sueldos a pagar a los vendedores en la semana. " << endl;
+        cout << "8 - Dada una fecha, contar cuantos de los vendedores zafrales actualmente registrados estaran contratados hasta despues" << endl << "de esa fecha." << endl;
         cin >> input;
         system("cls");
-        if(input == 1)
+        if(input == 0)
+        {
+            cap.~CapaLogica();
+            iter.~Iterador();
+        }
+        else if(input == 1)
         {
             bool salir = false;
             do
@@ -63,7 +75,7 @@ int main()
                 cout << "Ingrese cedula del supervisor: " << endl;
                 cin >> ceds;
                 cout << "Ingrese nombre del vendedor: " << endl;
-                nom.scan();
+                nom.scan();///Si pongo una sola se la saltea
                 nom.scan();
                 cout << "Ingrese cedula del vendedor: " << endl;
                 cin >> cedv;
@@ -73,12 +85,15 @@ int main()
                 cin >> num1;
                 cout << "Ingrese si vendedor es zafral: Z o fijo: F " << endl;
                 cin >> option;
+                bool invalida = false;
                 if(option == 'Z' || option == 'z')
                 {
                     cout << "Ingrese fecha de vencimiento: dd/mm/aaaa" << endl;
                     cin >> dia; cin >> mes; cin >> anio;
-                    Fecha fec1 (dia, mes, anio);
-                    cout << "Ingrese la comisión por venta: ";
+                    Fecha fec (dia, mes, anio);
+                    if(!fec.esValida())
+                        invalida = true;
+                    cout << "Ingrese la comision por venta: ";
                     cin >> num2;
                     vend = new Zafral(num, num1, cedv, nom, fec1, num2);
                     cap.registrarVendedor(vend, ceds, tipo);
@@ -96,7 +111,20 @@ int main()
                     tipo = NO_INGRESA_TIPO;
                 if(tipo != SIN_ERROR)
                 {
-                    cout << "Error: " << tipo /*No anda!!! Meter un switch en tipoerror.h*/ << " Desea ingresar nuevamente o salir?" << endl;
+                    if(invalida)
+                        cout << "Error: la fecha ingresada no es valida, Desea ingresar nuevamente o salir? " << endl;
+                    else
+                    {
+                        cout << "Error: ";
+                        if(tipo == NO_INGRESA_TIPO)
+                            cout << "No ingresa tipo";
+                        else if(tipo == VENDEDOR_YA_EXISTE)
+                            cout << "Vendedor ya existe";
+                        else
+                            cout << "Supervisor no existe";
+
+                        cout << " Desea ingresar nuevamente o salir?" << endl;
+                    }
                     cout << "Ingrese S para salir N para ingresar nuevamente: " << endl;
                     cin >> option;
                     if(option == 'S' || option == 's')
@@ -135,6 +163,7 @@ int main()
                 per->getNombre().print();
                 cout << "- Tipo Vendedor: ";
                 ((Vendedor*) per)->tipoObjeto().print();
+                cout << endl;
             }
             iter.~Iterador();
         }
@@ -174,10 +203,27 @@ int main()
         }
         else if(input == 8)
         {
-            cout << "Ingrese fecha: dd/mm/aaaa" << endl;
+                    cout << "Ingrese fecha: dd/mm/aaaa" << endl;
                     cin >> dia; cin >> mes; cin >> anio;
-                    Fecha fec1 (dia, mes, anio);
-            cout << "La cantidad de vendedores zafrales que estaran contratados luego de " << dia << "/" << mes << "/" << anio << " es: " << cap.cantZafralesHasta(fec1) << endl;
+                    Fecha fec2 (dia, mes, anio);
+                    bool salir = false;
+                    while((fec2.esValida() == false) && !salir)
+                    {
+                        cout << "Error: la fecha ingresada no es correcta." << endl;
+                        cout << "Ingrese N para ingresar nuevmaente o ingrese S para salir. " << endl;
+                        cin >> option;
+                        if (option == 'S' || option == 's')
+                            salir = true;
+                        else
+                        {
+                            cout << "Ingrese fecha: dd/mm/aaaa" << endl;
+                            cin >> dia; cin >> mes; cin >> anio;
+                            Fecha fecaux (dia, mes, anio);
+                            fec2 = fecaux;
+                        }
+                    }
+                    if(!salir)
+                        cout << "La cantidad de vendedores zafrales que estaran contratados luego de " << dia << "/" << mes << "/" << anio << " es: " << cap.cantZafralesHasta(fec2) << endl;
 
         }
         else

@@ -86,6 +86,10 @@ void CapaLogica :: registrarVentas(long int ced, int num, TipoError &tipo)
     else
         tipo = VENDEDOR_NO_EXISTE;
 }
-
+CapaLogica :: ~CapaLogica()
+{
+    supervisores.~Supervisores();
+    vendedores.~Vendedores();
+}
 
 

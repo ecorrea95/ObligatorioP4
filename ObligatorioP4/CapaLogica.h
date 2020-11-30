@@ -33,6 +33,7 @@ public:
 
     void registrarVentas(long int, int, TipoError &);
 
+    ~CapaLogica();
 };
 
 

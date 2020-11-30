@@ -1,5 +1,16 @@
 #include "DiccionarioVendedores.h"
 
+void Vendedores :: destruirArbol(NodoA *&abb)
+{
+ if (abb != NULL)
+ {
+     destruirArbol (abb -> hizq);
+     destruirArbol (abb -> hder);
+     delete (abb -> info);
+     delete (abb);
+     abb = NULL;
+ }
+}
 ///Precondicion, existe ced
 void Vendedores :: registrarcantVentasRecu(NodoA * &a, long int ced, int cantVent)
 {
@@ -25,8 +36,10 @@ int Vendedores :: contarZafralesRecu(NodoA * a, Fecha Fec)
     {
         if(a -> info -> tipoObjeto() == "Zafral")
         {
-            if(!((((Zafral *)a)->getFechaVencimiento()) < Fec)) ///no tenemos implementado > hay que ir por la negación
+            if( Fec < ((((Zafral *)a)->getFechaVencimiento()))) ///no tenemos implementado >
                 return 1 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
+            else
+                return 0 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
         }
         else
             return 0 + contarZafralesRecu(a -> hizq, Fec) + contarZafralesRecu(a -> hder, Fec);
@@ -104,7 +117,7 @@ Vendedores :: Vendedores ()
 
 Vendedores :: ~Vendedores ()
 {
-
+    destruirArbol(ABBVendedores);
 }
 
 bool Vendedores :: member (long int ced)

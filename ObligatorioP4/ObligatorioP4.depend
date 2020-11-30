@@ -153,10 +153,10 @@
 1606480655 source:c:\users\dell\desktop\ude\2° año\4° semestre\programacion iv\obligatorio\obligatoriop4\obligatoriop4\zafral.cpp
 	"Zafral.h"
 
-1606707517 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.cpp
+1606744733 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.cpp
 	"CapaLogica.h"
 
-1606707710 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.h
+1606744733 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\capalogica.h
 	"DiccionarioSupervisores.h"
 	"DiccionarioVendedores.h"
 	"TipoError.h"
@@ -177,7 +177,7 @@
 1606580752 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\iterador.h
 	"Persona.h"
 
-1606591538 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.h
+1606744733 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.h
 	"Vendedor.h"
 	"Iterador.h"
 	"Zafral.h"
@@ -196,12 +196,12 @@
 1606594856 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fijo.h
 	"Vendedor.h"
 
-1606619905 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\tipoerror.h
+1606751108 c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\tipoerror.h
 
-1606708179 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.cpp
+1606751299 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\diccionariovendedores.cpp
 	"DiccionarioVendedores.h"
 
-1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fecha.cpp
+1606746122 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fecha.cpp
 	"Fecha.h"
 
 1606594856 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\fijo.cpp
@@ -210,7 +210,7 @@
 1606580752 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\iterador.cpp
 	"Iterador.h"
 
-1606707690 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\main.cpp
+1606751129 source:c:\users\joaquín\downloads\obligatoriop4-main\obligatoriop4-main\obligatoriop4\main.cpp
 	<iostream>
 	"DiccionarioVendedores.h"
 	"DiccionarioSupervisores.h"
